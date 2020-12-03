@@ -3,7 +3,7 @@ export class SocialUsers {
     id: string;
     email: string;
     name: string;
-    image: string;
+    photoUrl?: string;
     token?: string;
     idToken?: string;
 }

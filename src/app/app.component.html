@@ -1,2 +1,4 @@
+<button (click)="service.loggedIn?signOut():signInWithGoogle()">{{service.loggedIn?'SignOut':'SignIn'}}</button>
+<!-- <button (click)="signOut()">sign Out</button> -->
+
 <router-outlet></router-outlet>
-<!-- <app-login></app-login> -->

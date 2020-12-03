@@ -1,10 +1,11 @@
 import { TestBed, async } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
-import { SocialAuthService } from 'angularx-social-login';
+import { GoogleLoginProvider, SocialAuthService, SocialAuthServiceConfig } from 'angularx-social-login';
 import { AppComponent } from './app.component';
-
+import { SocialloginService } from './services/sociallogin.service';
 describe('AppComponent', () => {
   beforeEach(async(() => {
+    const GOOGLE_CLIENT_ID = "428713053168-4ssq5usslhirfek7fu4u06lh63g6a0lr.apps.googleusercontent.com"
     TestBed.configureTestingModule({
       imports: [
         RouterTestingModule
@@ -12,7 +13,21 @@ describe('AppComponent', () => {
       declarations: [
         AppComponent
       ],
-      providers: [SocialAuthService]
+      providers: [SocialloginService, SocialAuthService,
+        {
+          provide: "SocialAuthServiceConfig",
+          useValue: {
+            autoLogin: false,
+            providers: [
+              {
+                id: GoogleLoginProvider.PROVIDER_ID,
+                provider: new GoogleLoginProvider(GOOGLE_CLIENT_ID, {
+                  scope: "profile email"
+                })
+              }
+            ]
+          } as SocialAuthServiceConfig
+        }]
     }).compileComponents();
   }));
 
@@ -28,10 +43,4 @@ describe('AppComponent', () => {
     expect(app.title).toEqual('OAuth-login');
   });
 
-  it('should render title', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.nativeElement;
-    expect(compiled.querySelector('.content span').textContent).toContain('OAuth-login app is running!');
-  });
 });

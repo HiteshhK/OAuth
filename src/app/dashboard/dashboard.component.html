@@ -1,9 +1,10 @@
-<img src="{{ _service.user?.photoUrl }}">
+<br>
 <div>
-    <h4>{{ _service.user.name }}</h4>
-    <p>{{ _service.user.email }}</p>
+    <img src="{{ _service.user?.photoUrl }}">
+    <div>
+        <h4>{{ _service.user.name }}</h4>
+        <p>{{ _service.user.email }}</p>
+    </div>
+    <br>
+    <br>
 </div>
-<br>
-<br>
-<br>
-<button (click)="signOut()">sign Out</button>
