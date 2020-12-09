@@ -1,5 +1,5 @@
 <br>
-<div>
+<div *ngIf="_service.user">
     <img src="{{ _service.user?.photoUrl }}">
     <div>
         <h4>{{ _service.user.name }}</h4>

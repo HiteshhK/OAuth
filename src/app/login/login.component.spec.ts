@@ -21,7 +21,7 @@ describe('LoginComponent', () => {
   });
 
   describe('HTML Elements', () => {
-    it('should have a  login header', () => {
+    it('should have a login page header', () => {
       const el = fixture.debugElement.query(By.css('h4'));
       expect(el.nativeElement.textContent).toBe('Login page');
     });

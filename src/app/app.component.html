@@ -1,4 +1,6 @@
-<button (click)="service.loggedIn?signOut():signInWithGoogle()">{{service.loggedIn?'SignOut':'SignIn'}}</button>
-<!-- <button (click)="signOut()">sign Out</button> -->
-
+<h1>{{title}}</h1>
+<button (click)=" service.loggedIn?signOut():signInWithGoogle()">{{service.loggedIn?'SignOut':'SignIn'}}</button>
+<h4 *ngIf="!service.loggedIn">Welcom to OAuth2.0 Login</h4>
 <router-outlet></router-outlet>
+<h2 *ngIf="service.loggedIn">Welcome {{service.user?.name}}</h2>
+<app-title message="Enter a new title" (changeTitleEvent)="changeTitle($event)"></app-title>

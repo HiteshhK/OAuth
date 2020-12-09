@@ -11,12 +11,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { TitleComponent } from './title/title.component';
 const GOOGLE_CLIENT_ID = "428713053168-4ssq5usslhirfek7fu4u06lh63g6a0lr.apps.googleusercontent.com"
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    DashboardComponent
+    DashboardComponent,
+    TitleComponent
   ],
   imports: [
     BrowserModule,

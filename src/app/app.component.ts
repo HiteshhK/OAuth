@@ -32,4 +32,7 @@ export class AppComponent {
     this.service.loggedIn = false;
     this.router.navigate(['']);
   }
+  changeTitle(newTitle) {
+    this.title = newTitle;
+  }
 }
